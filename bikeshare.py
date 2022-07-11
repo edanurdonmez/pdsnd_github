@@ -31,8 +31,9 @@ def get_filters():
 
     # TO DO: get user input for month (all, january, february, ... , june)
     month = input('Please enter one of the month which you want to filter between january, february, march, april, may, june or write "all" if you want to see all of months: ')
+    monthArray = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
     while True:
-     if month not in ['january', 'february', 'march', 'april', 'may', 'june', 'all']:
+     if month not in monthArray:
         month = input ('Sorry, this month you entered is not among the options. Please choose between months of january, february, march, april, may, june or write "all" if you want to see all of them: ').lower()
         continue
      else:
@@ -40,8 +41,9 @@ def get_filters():
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     day = input('Please enter one of the day which you want to filter it or write "all" if you want to see all of days: ')
+    dayArray = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all']
     while True:
-     if day not in ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all']:
+     if day not in dayArray:
         day = input ('Sorry, this day you entered is not among the options. Please choose between days of monday, tuesday, wednesday, thursday, friday, saturday, sunday or write "all" if you want to see all of them: ').lower()
         continue
      else:
@@ -73,18 +75,18 @@ def load_data(city, month, day):
     df['dayofweek'] = df['Start Time'].dt.weekday_name
   
    # filter by month if applicable
-    months = ['january', 'february', 'march', 'april', 'may', 'june']
-    if months.__contains__(month):
+    monthArray = ['january', 'february', 'march', 'april', 'may', 'june']
+    if monthArray.__contains__(month):
         # use the index of the months list to get the correspondingint
         for index in range(0,6):
-            if month == months[index]:
+            if month == monthArray[index]:
                month = index + 1
         # filter by month to create the new dataframe
         df = df[df['month_name'] == month]
         
     # filter by day of week if applicable
-    days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
-    if days.__contains__(day):
+    dayArray = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+    if dayArray.__contains__(day):
         # filter by day of week to create the new dataframe
         df = df[df['dayofweek'] == day.title()]
 
