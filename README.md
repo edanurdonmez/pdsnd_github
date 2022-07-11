@@ -3,8 +3,9 @@
 ### Date created
 Tuesday July 11, 2022
 
-### Bikeshare
-Homework project of Programming for Data Science Nanodegree Program
+### Project Title
+## Bikeshare
+Project of Programming for Data Science Nanodegree Program
 
 ### Description
 In this project, explored bike share system data for the major cities in U.S like Chicago, New York City and Washington.
