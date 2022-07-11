@@ -72,18 +72,18 @@ def load_data(city, month, day):
     df['dayofweek'] = df['Start Time'].dt.weekday_name
   
    # filter by month if applicable
-    months = ['january', 'february', 'march', 'april', 'may', 'june']
-    if months.__contains__(month):
+    monthArray = ['january', 'february', 'march', 'april', 'may', 'june']
+    if monthArray.__contains__(month):
         # use the index of the months list to get the correspondingint
         for index in range(0,6):
-            if month == months[index]:
+            if month == monthArray[index]:
                month = index + 1
         # filter by month to create the new dataframe
         df = df[df['month_name'] == month]
         
     # filter by day of week if applicable
-    days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
-    if days.__contains__(day):
+    dayArray = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+    if dayArray.__contains__(day):
         # filter by day of week to create the new dataframe
         df = df[df['dayofweek'] == day.title()]
 
