@@ -28,8 +28,9 @@ def get_filters():
 
     # TO DO: get user input for month (all, january, february, ... , june)
     month = input('Please enter one of the month which you want to filter between january, february, march, april, may, june or write "all" if you want to see all of months: ')
+    monthArray = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
     while True:
-     if month not in ['january', 'february', 'march', 'april', 'may', 'june', 'all']:
+     if month not in monthArray:
         month = input ('Sorry, this month you entered is not among the options. Please choose between months of january, february, march, april, may, june or write "all" if you want to see all of them: ').lower()
         continue
      else:
@@ -37,8 +38,9 @@ def get_filters():
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     day = input('Please enter one of the day which you want to filter it or write "all" if you want to see all of days: ')
+    dayArray = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all']
     while True:
-     if day not in ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all']:
+     if day not in dayArray:
         day = input ('Sorry, this day you entered is not among the options. Please choose between days of monday, tuesday, wednesday, thursday, friday, saturday, sunday or write "all" if you want to see all of them: ').lower()
         continue
      else:
