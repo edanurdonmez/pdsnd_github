@@ -20,3 +20,6 @@ In this project, explored bike share system data for the major cities in U.S lik
 ### Credits
 Inspired by udacity/pdsnd_github for Programming for Data Science Nanodegree Program
 
+### Branches
+ - Master
+ - Documentation
